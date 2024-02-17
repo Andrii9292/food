@@ -1,5 +1,4 @@
 function calculator() {
-  // Calculator
   
   const result = document.querySelector('.calculating__result span');
   

@@ -1,5 +1,4 @@
 function timer(id, deadline) {
-  //  TIMER
   
   function getTimeRemaining(deadline) {
     let days, hours, minutes, seconds;

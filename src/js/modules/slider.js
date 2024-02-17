@@ -1,5 +1,4 @@
 function slider({container, slide, nextArrow, prevArrow, totalCounter, currentCounter, wrapper, field}) {
-  // Slider
   
   let offset = 0;
   let slideIndex = 1;
@@ -48,7 +47,7 @@ function slider({container, slide, nextArrow, prevArrow, totalCounter, currentCo
         margin-right: 15%;
         margin-left: 15%;
         list-style: none;
-    `; // Если хотите - добавьте в стили, но иногда у нас нет доступа к стилям
+    `;
   slider.append(indicators);
   
   for(let i = 0; i < slides.length; i++) {
@@ -69,7 +68,7 @@ function slider({container, slide, nextArrow, prevArrow, totalCounter, currentCo
             opacity: .5;
             transition: opacity .6s ease;
         `;
-    if(i == 0) {
+    if(i === 0) {
       dot.style.opacity = 1;
     }
     indicators.append(dot);
@@ -81,7 +80,7 @@ function slider({container, slide, nextArrow, prevArrow, totalCounter, currentCo
   }
   
   next.addEventListener('click', () => {
-    if(offset == removeAllLetters(width) * (slides.length - 1)) {
+    if(offset === removeAllLetters(width) * (slides.length - 1)) {
       offset = 0;
     } else {
       offset += removeAllLetters(width);
@@ -89,7 +88,7 @@ function slider({container, slide, nextArrow, prevArrow, totalCounter, currentCo
     
     slidesField.style.transform = `translateX(-${offset}px)`;
     
-    if(slideIndex == slides.length) {
+    if(slideIndex === slides.length) {
       slideIndex = 1;
     } else {
       slideIndex++;
@@ -106,7 +105,7 @@ function slider({container, slide, nextArrow, prevArrow, totalCounter, currentCo
   });
   
   prev.addEventListener('click', () => {
-    if(offset == 0) {
+    if(offset === 0) {
       offset = removeAllLetters(width) * (slides.length - 1);
     } else {
       offset -= removeAllLetters(width);
@@ -114,7 +113,7 @@ function slider({container, slide, nextArrow, prevArrow, totalCounter, currentCo
     
     slidesField.style.transform = `translateX(-${offset}px)`;
     
-    if(slideIndex == 1) {
+    if(slideIndex === 1) {
       slideIndex = slides.length;
     } else {
       slideIndex--;
